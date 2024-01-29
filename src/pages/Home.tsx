@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       {isSuccess && (
         <>
           <MoviesGrid movies={data.Search} />
-          {searchTerm !== '' && data && data.Search > 0 && (
+          {searchTerm !== '' && data && data.Search && (
             <Pagination
               currentPage={pageNumber}
               totalPages={Math.ceil(data.totalResults / 10)}
