@@ -1,34 +1,27 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import { ChakraProvider } from '@chakra-ui/react';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 import store from '@/store';
-import Home from '@/pages/Home';
-import Detail from '@/pages/Detail';
-import Favorites from '@/pages/Favorites';
+import Layout from '@/components/Layout';
 
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/detail/:name',
-    element: <Detail />,
-  },
-  {
-    path: '/favorites',
-    element: <Favorites />,
-  },
-]);
+// Create a client
+const queryClient = new QueryClient()
 
 const App = () => {
   return (
     <React.StrictMode>
-      <Provider store={store}>
-        <RouterProvider router={router} />
-      </Provider>
+      <ChakraProvider>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <Layout />
+          </Provider>
+        </QueryClientProvider>
+      </ChakraProvider>
     </React.StrictMode>
   );
 };

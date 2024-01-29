@@ -1,20 +1,15 @@
 # SPA Template
 
-## TODO:
-- Multi language
-- REACT QUERY
-
 
 
 ## Available Scripts
-Firstly, do `npm install`, you need all those packages
+Firstly, do `npm install`, you need all those packages.
+Then you need to set .env.local file. Take a look at **env.d.ts** file, you will need an OMDB api key.
 
 
 ```bash
 $ npm run dev
 ```
-
-
 
 ```bash
 $ npm run build

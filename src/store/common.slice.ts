@@ -1,30 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const APP_THEME_LIGHT = 'light';
-export const APP_THEME_DARK = 'dark';
-
-export type TTheme = typeof APP_THEME_LIGHT | typeof APP_THEME_DARK;
-
 type TCommonState = {
-  theme: TTheme;
+  term: string;
+  pageNumber: number;
 };
 
 const initialState: TCommonState = {
-  theme: APP_THEME_DARK, // default theme
+  term: "",
+  pageNumber: 1,
+
 };
 
 const commonSlice = createSlice({
-  name: 'theme',
+  name: 'common',
   initialState,
   reducers: {
-    setTheme: (state, action) => {
+    setTerm: (state, action) => {
       return {
         ...state,
-        theme: action.payload.theme,
+        term: action.payload.term,
       };
     },
+    setPageNumber: (state, action) => {
+      return {
+        ...state,
+        pageNumber: action.payload.pageNumber,
+      };
+    }
   },
 });
 
-export const { setTheme } = commonSlice.actions;
+export const { setTerm, setPageNumber } = commonSlice.actions;
 export default commonSlice.reducer;
