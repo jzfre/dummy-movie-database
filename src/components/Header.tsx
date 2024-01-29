@@ -3,8 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { Box, Flex, Text } from '@chakra-ui/react';
 
-import Search from '@/components/Search';
-
 const Header: React.FC = () => {
   const navigate = useNavigate();
 

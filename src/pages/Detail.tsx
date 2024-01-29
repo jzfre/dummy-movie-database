@@ -25,13 +25,13 @@ const Detail: React.FC = () => {
   const navigate = useNavigate();
 
   const [isFavorite, setIsFavorite] = React.useState(() => {
-    return new Set(getFavorites()).has(id);
+    return new Set(getFavorites()).has(String(id));
   });
 
   const { isPending, isError, data } = useQuery({
     queryKey: ['getMovieById', id],
     queryFn: async () => {
-      const result = await fetch(buildOMDBApiSearchById(id as string));
+      const result = await fetch(buildOMDBApiSearchById(id!));
       return await result.json();
     },
     enabled: Boolean(id),
@@ -82,11 +82,7 @@ const Detail: React.FC = () => {
     <Box p={5}>
       <Flex direction={{ base: 'column', md: 'row' }}>
         <Flex direction="column" alignItems="center">
-          <Image
-            src={data.Poster}
-            alt={data.Title}
-            borderRadius="md"
-          />
+          <Image src={data.Poster} alt={data.Title} borderRadius="md" />
           <Button
             width="100%"
             mt={2}

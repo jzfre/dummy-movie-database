@@ -14,14 +14,14 @@ import {
 import { TMovie } from '@/utils/api';
 import { useNavigate } from 'react-router-dom';
 
-type TTileProps = {
+interface TTileProps {
   title: TMovie;
-};
+}
 
 const Tile: React.FC<TTileProps> = (props: TTileProps) => {
   const { Title, Year, Type, Poster, imdbID } = props.title;
   const navigate = useNavigate();
-  
+
   return (
     <Card
       direction={{ base: 'column', sm: 'row' }}
@@ -53,7 +53,11 @@ const Tile: React.FC<TTileProps> = (props: TTileProps) => {
         </CardBody>
 
         <CardFooter>
-          <Button variant="solid" colorScheme="blue" onClick={() => navigate(`/detail/${imdbID}`)}>
+          <Button
+            variant="solid"
+            colorScheme="blue"
+            onClick={() => navigate(`/detail/${imdbID}`)}
+          >
             Detail
           </Button>
         </CardFooter>

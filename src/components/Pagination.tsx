@@ -1,18 +1,18 @@
 import React from 'react';
 import { Box, Button, Flex } from '@chakra-ui/react';
 
-type TPaginationProps = {
+interface TPaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-};
+}
 
-type TPaginationElementProps = {
+interface TPaginationElementProps {
   number: number;
   currentPage: number;
   onPageChange: (page: number) => void;
   children: React.ReactNode;
-};
+}
 
 const PaginationElement: React.FC<TPaginationElementProps> = (
   props: TPaginationElementProps,

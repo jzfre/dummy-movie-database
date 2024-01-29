@@ -1,14 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-type TCommonState = {
+interface TCommonState {
   term: string;
   pageNumber: number;
-};
+}
 
 const initialState: TCommonState = {
-  term: "",
+  term: '',
   pageNumber: 1,
-
 };
 
 const commonSlice = createSlice({
@@ -26,7 +25,7 @@ const commonSlice = createSlice({
         ...state,
         pageNumber: action.payload.pageNumber,
       };
-    }
+    },
   },
 });
 

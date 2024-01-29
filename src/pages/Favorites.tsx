@@ -4,7 +4,12 @@ import { useQueries } from '@tanstack/react-query';
 import { getFavorites } from '@/utils/local-storage';
 import { TMovie, buildOMDBApiSearchById } from '@/utils/api';
 import Tile from '@/components/Tile';
-import { Box, SimpleGrid, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import {
+  Box,
+  SimpleGrid,
+  SkeletonCircle,
+  SkeletonText,
+} from '@chakra-ui/react';
 
 const Favorites: React.FC = () => {
   const favorites = getFavorites();

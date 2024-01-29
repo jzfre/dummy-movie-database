@@ -9,18 +9,17 @@ import Detail from '@/pages/Detail';
 import NoMatch from '@/pages/NoMatch';
 import Error from '@/pages/Error';
 
-
 const Layout: React.FC = () => {
   return (
     <BrowserRouter>
       <Header />
       <ErrorBoundary fallback={<Error />}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
       </ErrorBoundary>
     </BrowserRouter>
   );

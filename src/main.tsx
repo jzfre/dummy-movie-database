@@ -4,7 +4,5 @@ import App from './App.tsx';
 
 const rootElem = document.getElementById('root');
 if (rootElem) {
-  ReactDOM.createRoot(rootElem).render(
-      <App />
-  );
+  ReactDOM.createRoot(rootElem).render(<App />);
 }

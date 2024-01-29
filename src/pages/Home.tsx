@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import MoviesGrid from '@/components/MoviesGrid';
@@ -19,7 +19,6 @@ const Home: React.FC = () => {
 
   const randomMovie = Math.floor(Math.random() * movies.length);
   const term = searchTerm !== '' ? searchTerm : movies[randomMovie];
-
 
   const { isPending, isSuccess, isError, data } = useQuery({
     queryKey: ['getMoviesBySearchTerm', term, pageNumber],
@@ -42,7 +41,7 @@ const Home: React.FC = () => {
             {`Displaying results for ${searchTerm}`}
           </Highlight>
         ) : (
-          <Highlight query={"nice movies"} styles={highlightStyles}>
+          <Highlight query={'nice movies'} styles={highlightStyles}>
             {`What about some of these nice movies? Or try something else
         by using the searchbox`}
           </Highlight>

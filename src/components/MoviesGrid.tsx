@@ -10,33 +10,35 @@ import {
 import { TMovie } from '@/utils/api';
 import Tile from './Tile';
 
-type TMoviesGridProps = {
+interface TMoviesGridProps {
   movies?: TMovie[];
   pending?: boolean;
-};
+}
 
 const MoviesGrid: React.FC<TMoviesGridProps> = (props: TMoviesGridProps) => {
   const { movies, pending } = props;
 
   if (pending) {
-    return (<SimpleGrid minChildWidth="400px" spacing="30px">
-      <Box padding="6" boxShadow="lg" bg="white">
-        <SkeletonCircle size="10" />
-        <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
-      </Box>
-      <Box padding="6" boxShadow="lg" bg="white">
-        <SkeletonCircle size="10" />
-        <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
-      </Box>
-      <Box padding="6" boxShadow="lg" bg="white">
-        <SkeletonCircle size="10" />
-        <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
-      </Box>
-      <Box padding="6" boxShadow="lg" bg="white">
-        <SkeletonCircle size="10" />
-        <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
-      </Box>
-    </SimpleGrid>);
+    return (
+      <SimpleGrid minChildWidth="400px" spacing="30px">
+        <Box padding="6" boxShadow="lg" bg="white">
+          <SkeletonCircle size="10" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
+        </Box>
+        <Box padding="6" boxShadow="lg" bg="white">
+          <SkeletonCircle size="10" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
+        </Box>
+        <Box padding="6" boxShadow="lg" bg="white">
+          <SkeletonCircle size="10" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
+        </Box>
+        <Box padding="6" boxShadow="lg" bg="white">
+          <SkeletonCircle size="10" />
+          <SkeletonText mt="4" noOfLines={4} spacing="4" skeletonHeight="2" />
+        </Box>
+      </SimpleGrid>
+    );
   }
 
   if (movies && movies.length === 0) {
