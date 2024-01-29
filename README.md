@@ -2,11 +2,13 @@
 
 ## TODO:
 - Multi language
-- REDUX
 - REACT QUERY
 
 
+
 ## Available Scripts
+Firstly, do `npm install`, you need all those packages
+
 
 ```bash
 $ npm run dev
