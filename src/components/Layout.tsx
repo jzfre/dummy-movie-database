@@ -6,6 +6,7 @@ import Header from './Header';
 import Home from '@/pages/Home';
 import NoMatch from '@/pages/NoMatch';
 import Error from '@/pages/Error';
+import MemoizedWelcomeToast from './WelcomeToast';
 
 const Detail = lazy(() => import('@/pages/Detail'));
 const Favorites = lazy(() => import('@/pages/Favorites'));
@@ -35,6 +36,7 @@ const Layout: React.FC = () => {
           />
           <Route path="*" element={<NoMatch />} />
         </Routes>
+        <MemoizedWelcomeToast />
       </ErrorBoundary>
     </BrowserRouter>
   );
