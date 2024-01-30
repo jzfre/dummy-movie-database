@@ -3,11 +3,12 @@ import { useQuery } from '@tanstack/react-query';
 
 import MoviesGrid from '@/components/MoviesGrid';
 import { buildOMDBApiSearchByString } from '@/utils/api';
-import { Box, Flex, Heading, Highlight } from '@chakra-ui/react';
+import { Box, Flex, Heading, Highlight, useToast } from '@chakra-ui/react';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import Search from '@/components/Search';
 import Pagination from '@/components/Pagination';
 import { setPageNumber } from '@/store/common.slice';
+import MemoizedWelcomeToast from '@/components/WelcomeToast';
 
 const movies = ['Batman', 'Spider-Man', 'Superman'];
 
@@ -67,6 +68,7 @@ const Home: React.FC = () => {
           There has been an error.. Sorry about that
         </Flex>
       )}
+      <MemoizedWelcomeToast />
     </Box>
   );
 };
