@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import MoviesGrid from '@/components/MoviesGrid';
 import { buildOMDBApiSearchByString } from '@/utils/api';
-import { Box, Flex, Heading, Highlight, useToast } from '@chakra-ui/react';
+import { Box, Flex, Heading, Highlight } from '@chakra-ui/react';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import Search from '@/components/Search';
 import Pagination from '@/components/Pagination';
