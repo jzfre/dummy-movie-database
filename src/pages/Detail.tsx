@@ -11,7 +11,7 @@ import {
   Skeleton,
   SkeletonText,
 } from '@chakra-ui/react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import {
   addToFavorites,
@@ -22,7 +22,6 @@ import { buildOMDBApiSearchById } from '@/utils/api';
 
 const Detail: React.FC = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const [isFavorite, setIsFavorite] = React.useState(() => {
     return new Set(getFavorites()).has(String(id));
