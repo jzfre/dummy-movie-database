@@ -91,14 +91,14 @@ const Detail: React.FC = () => {
           >
             {!isFavorite ? 'Add to favorites' : 'Remove from favorites'}
           </Button>
-          <Button
+          {/* <Button
             width="100%"
             mt={2}
             colorScheme="blue"
             onClick={() => navigate('/')}
           >
             Back to homepage
-          </Button>
+          </Button> */}
         </Flex>
         <Box flex="1" ml={{ md: 5 }}>
           <Heading as="h1" size="xl" mb={2}>

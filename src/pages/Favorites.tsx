@@ -6,6 +6,7 @@ import { TMovie, buildOMDBApiSearchById } from '@/utils/api';
 import Tile from '@/components/Tile';
 import {
   Box,
+  Flex,
   SimpleGrid,
   SkeletonCircle,
   SkeletonText,
@@ -25,7 +26,20 @@ const Favorites: React.FC = () => {
   });
 
   if (favorites.length === 0) {
-    return <div>No Favorites</div>;
+    return (
+      <Flex
+        padding={10}
+        width="100%"
+        height="100%"
+        minHeight="200px"
+        justifyContent="center"
+        alignItems="center"
+        fontSize="xl"
+      >
+        You have Favorites, check some movie details and click on the button to
+        add
+      </Flex>
+    );
   }
 
   return (

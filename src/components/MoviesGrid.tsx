@@ -41,9 +41,15 @@ const MoviesGrid: React.FC<TMoviesGridProps> = (props: TMoviesGridProps) => {
     );
   }
 
-  if (movies && movies.length === 0) {
+  if (!movies) {
     return (
-      <Flex pt="5rem" width="100%" justifyContent="center" alignItems="center">
+      <Flex
+        pt="5rem"
+        width="100%"
+        justifyContent="center"
+        alignItems="center"
+        fontSize="xl"
+      >
         Unfortunately, no movies found..
       </Flex>
     );
